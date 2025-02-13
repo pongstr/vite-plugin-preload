@@ -4,26 +4,26 @@
   "author": "jarlef",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jarlef/vite-plugin-preload"
+    "url": "https://github.com/pongstr/vite-plugin-preload"
   },
   "bugs": {
-    "url": "https://github.com/jarlef/vite-plugin-preload/issues"
+    "url": "https://github.com/pongstr/vite-plugin-preload/issues"
   },
   "homepage": "https://github.com/jarlef/vite-plugin-preload/tree/main/#readme",
   "license": "MIT",
   "scripts": {
     "clean": "del dist \"./examples/*/dist/\" \"./examples/*/node_modules/\"",
     "build": "tsup",
-    "pretest": "yarn build",
+    "pretest": "pnpm build",
     "test": "vitest",
-    "prepack": "yarn build"
+    "prepack": "pnpm build"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     "import": "./dist/index.mjs",
-    "require": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "require": "./dist/index.js"
   },
   "keywords": [
     "vite",
@@ -39,7 +39,8 @@
   "dependencies": {
     "@rollup/pluginutils": "^5.1.0",
     "jsdom": "^24.0.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vite-plugin-preload-react-demo": "link:examples/react-demo"
   },
   "peerDependencies": {
     "vite": ">=5.0.0"
@@ -49,6 +50,7 @@
     "@types/node": "^20.11.30",
     "@types/prettier": "^3.0.0",
     "del-cli": "^5.1.0",
+    "rollup": "^4.34.6",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3",
     "vite": "^5.2.2",

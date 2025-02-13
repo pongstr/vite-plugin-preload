@@ -1,7 +1,7 @@
 import { exec } from "child_process";
 import { beforeAll } from "vitest";
 
-const execShellCommand = (cmd) => {
+const execShellCommand = (cmd: string) => {
   return new Promise((resolve, reject) => {
     exec(cmd, (error, stdout, stderr) => {
       if (error) {
@@ -14,6 +14,6 @@ const execShellCommand = (cmd) => {
 };
 
 beforeAll(async () => {
-  await execShellCommand('yarn --cwd "examples/react-demo" install');
-  await execShellCommand('yarn --cwd "examples/react-demo" build');
+  await execShellCommand('pnpm -C "examples/react-demo" install');
+  await execShellCommand('pnpm -C "examples/react-demo" build');
 });
